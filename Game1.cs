@@ -68,11 +68,11 @@ public class Game1 : Game
         // TODO: Add your update logic here
         _ballPosition += _ballDirection * _ballSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        if(_ballPosition.X <= _PlayArea.Left || _ballPosition.X >= _PlayArea.Right)
+        if(_ballPosition.X <= _PlayArea.Left - _ballWidthAndHeight || _ballPosition.X >= _PlayArea.Right - _ballWidthAndHeight)
         {
             _ballDirection.X *= -1;
         }
-        if(_ballPosition.Y >= _PlayArea.Top || _ballPosition.Y <= _PlayArea.Bottom)
+        if(_ballPosition.Y >= _PlayArea.Top - _ballWidthAndHeight || _ballPosition.Y <= _PlayArea.Bottom - _ballWidthAndHeight)
         {
             _ballDirection.Y *= -1;
         }
